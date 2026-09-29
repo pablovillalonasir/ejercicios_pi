@@ -10,12 +10,14 @@
         name: "{{ item }}"
         state: present
       loop:
+        - git
+        - apache2
         # Aquí tienes que poner los paquetes que quieres instalar
       # Copia un fichero a la máquina remota
     - name: "Copiar fichero a la máquina remota"
       copy:
         src: files/foo.conf
-        dest:
+        dest: /etc/foo.conf
         owner: root
         group: root
         mode: '0644'
@@ -24,7 +26,7 @@
     - name: "Copiar un template a un fichero de la máquina remota"
       template:
         src: templates/index.j2
-        dest:
+        dest: /var/www/html/index.html
         owner: www-data
         group: www-data
         mode: 0644
