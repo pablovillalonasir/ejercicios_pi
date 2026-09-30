@@ -30,17 +30,3 @@
         owner: www-data
         group: www-data
         mode: 0644
-
-      # Crear base de datos
-    - name: "Crear base de datos"
-      community.mysql.mysql_db:
-        name: "{{ bd_name }}"
-        state: present
-
-      # Crear usuario de base de datos
-    - name: "Crear usuario de base de datos"
-      community.mysql.mysql_user:
-        name: "{{ bd_user }}"
-        password: "{{ bd_pass }}"
-        priv: "{{ bd_name }}.*:ALL"
-        state: present
