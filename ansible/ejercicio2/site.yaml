@@ -1,14 +1,14 @@
-- hosts:
+- hosts: all
   become: true
   roles:
-   - role:
+   - role: commons
 
-- hosts:
+- hosts: servidores_web
   become: true
   roles:
-   - role:
+   - role: apache2
 
-- hosts:
+- hosts: servidores_bd
   become: true
   roles:
-   - role:
+   - role: mariadb

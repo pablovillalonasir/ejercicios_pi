@@ -1,2 +1,2 @@
-- name: restart apache2
+- name: Reiniciar apache2
   service: name=apache2 state=restarted
