@@ -4,4 +4,6 @@ network:
     ens3:
       dhcp4: false
       addresses: ["10.0.0.2/24"]  # IP estática en red muy aislada
-      gateway4: 10.0.0.1           # server1 actúa como gateway
+      routes:
+        - to: default
+          via: 10.0.0.1             # server1 actúa como gateway

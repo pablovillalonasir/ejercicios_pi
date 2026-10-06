@@ -1,0 +1,5 @@
+# Fichero generado por OpenTofu (inventario.tf): no lo edites a mano
+[servidores]
+ej5-server1 ansible_host=${ip_server1} ansible_user=debian
+# server2 solo es accesible a través de server1 (ProxyJump)
+ej5-server2 ansible_host=${ip_server2} ansible_user=ubuntu ansible_ssh_common_args='-o ProxyJump=debian@${ip_server1}'

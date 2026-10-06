@@ -29,6 +29,9 @@ resource "libvirt_domain" "ej3-server1" {
   memory = 1024
   vcpu   = 2
 
+  # Pide las IP al agente de QEMU (qemu-guest-agent): así se conocen también las estáticas
+  qemu_agent = true
+
   # Red 1: NAT con DHCP (acceso exterior)
   network_interface {
     network_id     = libvirt_network.ej3-nat-dhcp.id
@@ -45,7 +48,9 @@ resource "libvirt_domain" "ej3-server1" {
   disk { volume_id = libvirt_volume.ej3-server1-disk-extra1.id }
   cloudinit = libvirt_cloudinit_disk.ej3-server1-cloudinit.id
 
-  # Consola serie necesaria para acceder con "virsh console"
+  # Consola serie: las imágenes cloud la esperan (sin ella, algunas, como
+  # Ubuntu, no terminan de arrancar) y permite entrar con "virsh console"
+  # aunque falle la red
   console {
     type        = "pty"
     target_port = "0"

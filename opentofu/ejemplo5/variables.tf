@@ -16,5 +16,5 @@ variable "base_image_debian" {
 variable "base_image_ubuntu" {
   type        = string
   description = "Nombre de la imagen base Ubuntu en el pool."
-  default     = "ubuntu2404-base.qcow2"
+  default     = "ubuntu2604-base.qcow2"
 }
