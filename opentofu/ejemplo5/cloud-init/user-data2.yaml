@@ -2,14 +2,12 @@
 hostname: ej5-server2
 
 timezone: Europe/Madrid
-locale: es_ES.UTF-8
-
 users:
   - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     shell: /bin/bash
-    ssh-authorized-keys:
+    ssh_authorized_keys:
       - ssh-ed25519 AAAA... sustituye esta línea por tu clave pública
 
 chpasswd:
@@ -23,9 +21,6 @@ chpasswd:
 # paquetes ni NAT). Si se dejan estas líneas, cloud-init intenta usar apt en el
 # primer arranque, se queda reintentando y termina con error.
 # Descoméntalas cuando server1 le dé salida al exterior.
-#
-# packages:
-#   - qemu-guest-agent # para que el hipervisor obtenga la IP de la VM
 #
 # package_update: true  # refresca índices de apt
 # package_upgrade: true # aplica actualizaciones disponibles en el primer arranque

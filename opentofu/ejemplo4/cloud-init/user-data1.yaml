@@ -2,18 +2,12 @@
 hostname: ej4-server1
 
 timezone: Europe/Madrid
-locale: es_ES.UTF-8
-
-# keyboard solo tiene efecto en Debian
-keyboard:
-  layout: es
-
 users:
   - name: debian
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     shell: /bin/bash
-    ssh-authorized-keys:
+    ssh_authorized_keys:
       - ssh-ed25519 AAAA... sustituye esta línea por tu clave pública
 
 chpasswd:
@@ -22,9 +16,6 @@ chpasswd:
     - name: debian
       password: asdasd
       type: text
-
-packages:
-  - qemu-guest-agent # necesario para que el hipervisor obtenga la IP de la VM
 
 package_update: true  # refresca índices de apt
 package_upgrade: true # aplica actualizaciones disponibles en el primer arranque

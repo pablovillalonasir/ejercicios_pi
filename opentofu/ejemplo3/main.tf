@@ -29,9 +29,6 @@ resource "libvirt_domain" "ej3-server1" {
   memory = 1024
   vcpu   = 2
 
-  # Pide las IP al agente de QEMU (qemu-guest-agent): así se conocen también las estáticas
-  qemu_agent = true
-
   # Red 1: NAT con DHCP (acceso exterior)
   network_interface {
     network_id     = libvirt_network.ej3-nat-dhcp.id

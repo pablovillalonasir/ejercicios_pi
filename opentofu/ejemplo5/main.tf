@@ -24,9 +24,6 @@ resource "libvirt_domain" "ej5-server1" {
   memory = 1024
   vcpu   = 2
 
-  # Pide las IP al agente de QEMU (qemu-guest-agent): así se conocen también las estáticas
-  qemu_agent = true
-
   # Red 1: NAT con DHCP (acceso exterior)
   network_interface {
     network_id     = libvirt_network.ej5-nat-dhcp.id
@@ -76,8 +73,6 @@ resource "libvirt_domain" "ej5-server2" {
   name   = "ej5-server2"
   memory = 1024
   vcpu   = 2
-
-  # Sin qemu_agent: server2 no tiene salida a Internet y no puede instalar el agente
 
   # Red única: muy aislada (IP estática 10.0.0.2, gateway 10.0.0.1)
   network_interface {
