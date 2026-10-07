@@ -10,5 +10,5 @@ variable "libvirt_pool_name" {
 variable "base_image" {
   type        = string
   description = "Nombre de la imagen base en el pool."
-  default     = "debian-13-generic-amd64.qcow2"
+  default     = "ubuntu2604-base.qcow2"
 }
