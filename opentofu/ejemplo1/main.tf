@@ -12,6 +12,11 @@ resource "libvirt_cloudinit_disk" "ej1-server1-cloudinit" {
   name      = "ej1-server1-cloudinit.iso"
   pool      = var.libvirt_pool_name
   user_data = file("${path.module}/cloud-init/user-data1.yaml")
+  meta_data = <<EOF
+instance-id: ej1-server1
+local-hostname: ej1-server1
+EOF
+}
 }
 
 # Definición del dominio (máquina virtual)
