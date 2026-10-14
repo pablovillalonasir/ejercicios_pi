@@ -34,6 +34,7 @@ resource "libvirt_domain" "ej2-server1" {
   name   = "ej2-server1"
   memory = 1024
   vcpu   = 2
+  autostart = true
 
   network_interface {
     network_name   = "default"
