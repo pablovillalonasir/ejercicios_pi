@@ -41,6 +41,12 @@ resource "libvirt_domain" "ej3-server1" {
     wait_for_lease = true
   }
 
+  # Red 3
+  network_interface {
+  	network_id     = libvirt_network.ej3-nat-dhcp2.id
+  	wait_for_lease = true
+}
+
   disk { volume_id = libvirt_volume.ej3-server1-disk.id }
   disk { volume_id = libvirt_volume.ej3-server1-disk-extra1.id }
   cloudinit = libvirt_cloudinit_disk.ej3-server1-cloudinit.id
