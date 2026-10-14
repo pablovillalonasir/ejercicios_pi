@@ -32,7 +32,7 @@ resource "libvirt_cloudinit_disk" "ej2-server1-cloudinit" {
 # Definición del dominio (máquina virtual)
 resource "libvirt_domain" "ej2-server1" {
   name   = "ej2-server1"
-  memory = 1024
+  memory = 2048
   vcpu   = 2
   autostart = true
 
