@@ -3,7 +3,7 @@ hostname: ej2-server1
 
 timezone: Europe/Madrid
 users:
-  - name: debian
+  - name: ubuntu
     sudo: ALL=(ALL) NOPASSWD:ALL
     groups: users, admin
     shell: /bin/bash
@@ -13,7 +13,7 @@ users:
 chpasswd:
   expire: False
   users:
-    - name: debian
+    - name: ubuntu
       password: asdasd
       type: text
 
