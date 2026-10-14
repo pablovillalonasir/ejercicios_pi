@@ -43,7 +43,7 @@ resource "libvirt_domain" "ej2-server1" {
 
   disk { volume_id = libvirt_volume.ej2-server1-disk.id }
   disk { volume_id = libvirt_volume.ej2-server1-disk-extra1.id }
-  disk { volume_id = libvirt_volume.ej2-server1-disk-extra2.id }
+#  disk { volume_id = libvirt_volume.ej2-server1-disk-extra2.id }
   cloudinit = libvirt_cloudinit_disk.ej2-server1-cloudinit.id
 
   # Consola serie: las imágenes cloud la esperan (sin ella, algunas, como
