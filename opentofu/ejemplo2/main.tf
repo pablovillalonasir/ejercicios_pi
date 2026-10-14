@@ -16,11 +16,11 @@ resource "libvirt_volume" "ej2-server1-disk-extra1" {
 }
 
 #Disco vacío de 5GB
-resource "libvirt_volume" "ej2-server1-disk-extra2" {
-	name = "ej2-server1-disk-extra2.qcow2"
-	pool = var.libvirt_pool_name
-	size = 5 * 1024 * 1024 * 1024
-}
+#resource "libvirt_volume" "ej2-server1-disk-extra2" {
+#	name = "ej2-server1-disk-extra2.qcow2"
+#	pool = var.libvirt_pool_name
+#	size = 5 * 1024 * 1024 * 1024
+#}
 
 # ISO cloud-init con la configuración inicial de la máquina
 resource "libvirt_cloudinit_disk" "ej2-server1-cloudinit" {
