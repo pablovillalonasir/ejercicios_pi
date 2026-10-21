@@ -3,3 +3,5 @@
 ej5-server1 ansible_host=${ip_server1} ansible_user=debian
 # server2 solo es accesible a través de server1 (ProxyJump)
 ej5-server2 ansible_host=${ip_server2} ansible_user=ubuntu ansible_ssh_common_args='-o ProxyJump=debian@${ip_server1}'
+# Nueva máquina (server 3)
+ej5-server3 ansible_host=${ip_server3} ansible_user=debian ansible_ssh_common_args='-o ProxyJump=debian@${ip_server1}'
