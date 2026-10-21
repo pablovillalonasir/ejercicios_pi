@@ -40,6 +40,11 @@ resource "libvirt_domain" "ej4-server1" {
     network_id = libvirt_network.ej4-aislada-static.id
   }
 
+  # Red 3: muy asilada (IP estática 172.16.0.10)
+  network_interface {
+    network_id = libvirt_network.ej4-muy-aislada.id
+  }
+
   disk { volume_id = libvirt_volume.ej4-server1-disk.id }
   disk { volume_id = libvirt_volume.ej4-server1-disk-extra1.id }
   cloudinit = libvirt_cloudinit_disk.ej4-server1-cloudinit.id
