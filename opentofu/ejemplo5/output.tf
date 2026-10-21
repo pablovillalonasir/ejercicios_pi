@@ -14,3 +14,11 @@ output "ej5-server2" {
     ip1    = "10.0.0.2" # estática: está en cloud-init/network-config2.yaml
   }
 }
+
+# server3: Nueva máquina
+output "ej5-server3" {
+  value = {
+    nombre = "ej5-server3"
+    ip1    = "10.0.0.3" # estática: está en cloud-init/network-config3.yaml
+  }
+}
